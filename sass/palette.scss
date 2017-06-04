@@ -1,0 +1,184 @@
+@import "components/color";
+@import "mixins/ribbon";
+
+@each $color_name, $color in $colors {
+  @each $color_type, $color_value in $color {
+    @if $color_type == "base" {
+      @supports (-webkit-appearance:none) {
+        .palette-primary-#{$color_name} {
+          background: $color_value
+        }
+      }
+
+      body.palette-primary-#{$color_name} {
+        .footer, .header {
+          background: $color_value;
+        }
+
+        .article {
+          code {
+            color: $color_value;
+          }
+          .headerlink {
+            color: rgba(0, 0, 0, .26)
+          }
+          table th {
+            background: lighten($color_value, 20)
+          }
+        }
+        .results .meta {
+          background: $color_value;
+        }
+      }
+
+      .ios.standalone .palette-primary-#{$color_name} .article {
+        background: -webkit-linear-gradient(top, #fff 50%, $color_value 0);
+        background: linear-gradient(180deg, #fff 50%, $color_value 0)
+      }
+      body.palette-accent-#{$color_name} {
+        .article {
+          a:focus, a:hover {
+            color: $color_value;
+          }
+        }
+        a:focus, a:hover {
+          color: $color_value;
+        }
+        .drawer {
+          .toc {
+            a.current, a:focus, a:hover {
+              color: $color_value;
+
+            }
+            .anchor a {
+              border-left: 2px solid $color_value;
+            }
+          }
+        }
+      }
+
+      body.palette-accent-#{$color_name} .repo a {
+        background: $color_value;
+      }
+      body.palette-title-#{$color_name} {
+        h1, h2, h3, h4, h5, h6 {
+          color: $color_value;
+        }
+      }
+      body.palette-link-#{$color_name} {
+        .article a {
+          color: $color_value;
+        }
+      }
+
+      .parallax-container.#{$color_name} .content {
+        h1 {
+          text-shadow: 3px 3px darken($color_value, 30);
+        }
+      }
+
+      .ribbon.#{$color_name} {
+        background: $color_value;
+        margin-left: -10px;
+        margin-right: -10px;
+        //box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+        &:before {
+          @include ribbon(10px, darken($color_value, 20), up-right);
+          bottom: -10px;
+        }
+        &:after {
+          @include ribbon(10px, darken($color_value, 15), up-left);
+          bottom: -10px;
+          right: 0;
+        }
+      }
+    } @else if $color_name != "shades" {
+      @supports (-webkit-appearance:none) {
+        .palette-primary-#{$color_name}-#{$color_type} {
+          background: $color_value
+        }
+      }
+
+      body.palette-primary-#{$color_name}-#{$color_type} {
+        .footer, .header {
+          background: $color_value;
+        }
+
+        .article {
+          code {
+            color: $color_value;
+          }
+          .headerlink {
+            color: rgba(0, 0, 0, .26)
+          }
+          table th {
+            background: lighten($color_value, 20)
+          }
+        }
+        .results .meta {
+          background: $color_value;
+        }
+      }
+
+      .ios.standalone .palette-primary-#{$color_name}-#{$color_type} .article {
+        background: -webkit-linear-gradient(top, #fff 50%, $color_value 0);
+        background: linear-gradient(180deg, #fff 50%, $color_value 0)
+      }
+      body.palette-accent-#{$color_name}-#{$color_type} {
+        .article {
+          a:focus, a:hover {
+            color: $color_value;
+          }
+        }
+        a:focus, a:hover {
+          color: $color_value;
+        }
+        .drawer {
+          .toc {
+            a.current, a:focus, a:hover {
+              color: $color_value;
+
+            }
+            .anchor a {
+              border-left: 2px solid $color_value;
+            }
+          }
+        }
+      }
+
+      body.palette-accent-#{$color_name}-#{$color_type} .repo a {
+        background: $color_value;
+      }
+      body.palette-title-#{$color_name}-#{$color_type} {
+        h1, h2, h3, h4, h5, h6 {
+          color: $color_value;
+        }
+      }
+      body.palette-link-#{$color_name}-#{$color_type} {
+        .article a {
+          color: $color_value;
+        }
+      }
+
+      .parallax-container.#{$color_name}.#{$color_type} .content {
+        h1 {
+          text-shadow: 3px 3px darken($color_value, 30);
+        }
+      }
+
+      .ribbon.#{$color_name}.#{$color_type} {
+        background: $color_value;
+        margin-left: -10px;
+        &:before {
+          @include ribbon(10px, darken($color_value, 20), up-right);
+          bottom: -10px;
+        }
+        &:after {
+          @include ribbon(10px, darken($color_value, 15), up-left);
+          bottom: -10px;
+          right: 0;
+        }
+      }
+    }
+  }
+}

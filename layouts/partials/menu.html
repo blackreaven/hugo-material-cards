@@ -1,0 +1,11 @@
+<!-- Menu items sorted alphabetically by name -->
+{{ $page := . }}
+{{ $site := .Site }}
+{{ range .Site.Menus.main }}
+    {{ $is := $page.IsMenuCurrent "main" . }}
+    {{ $has := $page.HasMenuCurrent "main" . }}
+    <li class="{{ if $is }}active{{ end }}">
+            <a href="{{ .URL }}">{{ .Pre }} {{ .Name }}</a>
+        <!-- Show a » symbol if there is a sub-menu we haven't rendered -->
+    </li>
+{{end}}

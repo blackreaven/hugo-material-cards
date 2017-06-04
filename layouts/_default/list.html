@@ -1,0 +1,23 @@
+{{ define "main" }}
+<div class="container">
+    <div class="row">
+        {{ range .Data.Pages }}
+        <div class="col s12 m6 l4 item ">
+            <article class="card">
+                <div class="ribbon {{ if .Params.color }}{{ .Params.color }}{{ else }}blue{{ end }}">
+                    <div class="ribbon-content">
+                        <span class="card-title">
+                            <a href="{{ .Permalink }}" title="{{ .Title }}">{{ .Title }}</a>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="card-content blue-grey-text darken-4">
+                    {{ .Params.Description }}
+                </div>
+            </article>
+        </div>
+        {{ end }}
+    </div>
+</div>
+{{ end }}

@@ -1,0 +1,32 @@
+{{ define "main" }}
+<article class="article ">
+    <header class="parallax-container{{ if .Params.color }} {{ .Params.color }}{{ else }} blue{{ end }}">
+        {{ if .Params.image }}
+        <div class="parallax">
+            <img src="{{ .Params.image }}" alt="" >
+        </div>
+        {{ end }}
+        <div class="content">
+            <div class="date">
+                <span class="day">{{ .PublishDate.Day }}</span>
+                <span class="month">{{ .PublishDate.Month }}</span>
+                <span class="year">{{ .PublishDate.Year }}</span>
+            </div>
+            <h1 class="white-text text-darken-4">{{ .Title }}</h1>
+            <span class="subtitle white-text text-darken-4">{{ .Description }}</span>
+        </div>
+    </header>
+    <div class="wrapper row">
+        <aside class="toc col l2" id="toc">
+            <ul id="scrollspy">
+            </ul>
+        </aside>
+        <section class="content col l10">
+            {{ .Content }}
+        </section>
+        <footer class="article-footer">
+
+        </footer>
+    </div>
+</article>
+{{ end }}
