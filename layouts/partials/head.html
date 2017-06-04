@@ -89,7 +89,7 @@
   <body class="
     {{ with .Site.Params.palette.primary }}palette-primary-{{ . }}{{ end }}{{ with .Site.Params.palette.primarytype }}-{{ . }}{{end }}
     {{ with .Site.Params.palette.accent }}palette-accent-{{ .  }}{{ end }}{{ with .Site.Params.palette.accenttype }}-{{ . }}{{ end }}
-    {{ if .Params.color }}palette-title-{{ .Params.color }}{{ else }}{{ with .Site.Params.palette.title }}palette-title-{{ . }}{{ end }}{{ with .Site.Params.palette.titletype }}-{{ . }}{{ end }}{{ end }} {{ with .Site.Params.palette.link }}palette-link-{{ .  }}{{ end }}{{ with .Site.Params.palette.linktype }}-{{ . }}{{ end }}">
+    {{ if .Params.color }}palette-title-{{ replace .Params.color " " "-"}}{{ else }}{{ with .Site.Params.palette.title }}palette-title-{{ . }}{{ end }}{{ with .Site.Params.palette.titletype }}-{{ . }}{{ end }}{{ end }} {{ with .Site.Params.palette.link }}palette-link-{{ .  }}{{ end }}{{ with .Site.Params.palette.linktype }}-{{ . }}{{ end }}">
   {{else}}
   <body class="{{ if .IsPage }}single{{ end }} {{ with .Site.Params.palette.primary }}palette-primary-{{ . }}{{ end }}{{ with .Site.Params.palette.primarytype }}-{{ . }}{{end }} {{ with .Site.Params.palette.accent }}palette-accent-{{ .  }}{{ end }}{{ with .Site.Params.palette.accenttype }}-{{ . }}{{ end }} {{ with .Site.Params.palette.title }}palette-title-{{ .  }}{{ end }}{{ with .Site.Params.palette.titletype }}-{{ . }}{{ end }} {{ with .Site.Params.palette.link }}palette-link-{{ .  }}{{ end }}{{ with .Site.Params.palette.linktype }}-{{ . }}{{ end }}">
   {{end}}
