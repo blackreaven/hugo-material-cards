@@ -1,0 +1,24 @@
+
+{{ define "main" }}
+<article class="article ">
+    <header class="parallax-container{{ if .Params.color }} {{ .Params.color }}{{ else }} blue{{ end }}">
+        <div class="content">
+            <h1 class="white-text text-darken-4">{{ .Title }}</h1>
+        </div>
+    </header>
+    <div class="wrapper row">
+        <section class="content col l12">
+
+          <div class="collection">
+              {{ range .Paginator.Pages.ByDate.Reverse }}
+              <a href="{{ .Permalink }}" class="collection-item">{{ .Title }}<span class="badge blue white-text">{{ $.Data.Terms.Count .Data.Term }}</span></a>
+              {{ end }}
+          </div>
+        </section>
+        <footer class="article-footer">
+
+        </footer>
+    </div>
+</article>
+
+{{ end }}
