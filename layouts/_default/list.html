@@ -5,16 +5,30 @@
         <div class="col s12 m6 l4 item ">
             <article class="card">
                 <div class="ribbon {{ if .Params.color }}{{ .Params.color }}{{ else }}blue{{ end }}">
-                    <div class="ribbon-content">
-                        <span class="card-title">
-                            <a href="{{ .Permalink }}" title="{{ .Title }}">{{ .Title }}</a>
+                    <a href="{{ .Permalink }}" title="{{ .Title }}" class="waves-effect waves-light">
+                        <span class="ribbon-content">
+                            <span class="card-title">
+                                {{ .Title }}
+                            </span>
                         </span>
-                    </div>
+                    </a>
                 </div>
 
                 <div class="card-content blue-grey-text darken-4">
-                    {{ .Params.Description }}
+                    <p>{{ .Params.Description }}</p>
+
+
                 </div>
+                {{ if .Params.Tags }}
+                <div class="card-footer">
+                    <span class="tags {{ if .Params.color }}tags-{{ replace .Params.color " " "-"}}{{end}}">
+                        <i class="fa fa-lg fa-tag"></i>
+                        {{ range .Params.Tags }}
+                        <a href="/tags/{{. | lower}}" class="tag">{{.}}</a>
+                        {{ end }}
+                    </span>
+                </div>
+                {{ end }}
             </article>
         </div>
         {{ end }}

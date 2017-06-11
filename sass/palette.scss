@@ -31,9 +31,14 @@
             color: $color_value;
           }
         }
-        a:focus, a:hover {
-          color: $color_value;
+
+        .card .card-footer {
+          a.tag {
+            border: 1px solid $color_value;
+            color: $color_value;
+          }
         }
+
         .drawer {
           .toc {
             a.current, a:focus, a:hover {
@@ -47,12 +52,21 @@
         }
       }
 
+      body .card .card-footer span.tags.tags-#{$color_name} a.tag {
+        border: 1px solid $color_value;
+        color: $color_value;
+      }
+
       body.palette-accent-#{$color_name} .repo a {
         background: $color_value;
       }
+
       body.palette-title-#{$color_name} {
         h1, h2, h3, h4, h5, h6 {
           color: $color_value;
+        }
+        blockquote {
+          border-left: 5px solid $color_value;
         }
       }
       body.palette-link-#{$color_name} {
@@ -67,7 +81,7 @@
         }
       }
 
-      .ribbon.#{$color_name} {
+      body .card .ribbon.#{$color_name} {
         background: $color_value;
         margin-left: -10px;
         margin-right: -10px;
@@ -81,8 +95,16 @@
           bottom: -10px;
           right: 0;
         }
+        a:hover, a:focus {
+          color: lighten($color_value, 40);
+        }
+        .card-title {
+          text-shadow: 1px 1px darken($color_value, 30);
+        }
+
       }
     } @else if $color_name != "shades" {
+
       body.palette-primary-#{$color_name}-#{$color_type} {
         .footer, .header {
           background: $color_value;
@@ -109,9 +131,14 @@
             color: $color_value;
           }
         }
-        a:focus, a:hover {
-          color: $color_value;
+
+        .card .card-footer {
+          a.tag {
+            border: 1px solid $color_value;
+            color: $color_value;
+          }
         }
+
         .drawer {
           .toc {
             a.current, a:focus, a:hover {
@@ -125,6 +152,11 @@
         }
       }
 
+      body .card .card-footer span.tags.tags-#{$color_name}-#{$color_type} a.tag {
+        border: 1px solid $color_value;
+        color: $color_value;
+      }
+
       body.palette-accent-#{$color_name}-#{$color_type} .repo a {
         background: $color_value;
       }
@@ -132,6 +164,9 @@
       body.palette-title-#{$color_name}-#{$color_type} {
         h1, h2, h3, h4, h5, h6 {
           color: $color_value;
+        }
+        blockquote {
+          border-left: 5px solid $color_value;
         }
       }
 
@@ -147,7 +182,7 @@
         }
       }
 
-      .ribbon.#{$color_name}.#{$color_type} {
+      body .card .ribbon.#{$color_name}.#{$color_type} {
         background: $color_value;
         margin-left: -10px;
         &:before {
@@ -158,6 +193,14 @@
           @include ribbon(10px, darken($color_value, 15), up-left);
           bottom: -10px;
           right: 0;
+        }
+
+        a:hover, a:focus {
+          color: lighten($color_value, 25);
+        }
+
+        .card-title {
+          text-shadow: 1px 1px darken($color_value, 30);
         }
       }
     }

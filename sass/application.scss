@@ -11,10 +11,12 @@ body {
       content: "";
       position: absolute;
     }
-    .ribbon-content {
-      margin-left: 15px;
-        a {
-        color: white;
+    a {
+      color: white;
+      width: 100%;
+
+      .ribbon-content {
+        padding-left: 15px;
       }
     }
   }
@@ -26,7 +28,7 @@ body {
   }
 
   .col.item {
-    padding: 20px;
+    padding: 20px 20px 0px 20px;
     .card-image {
       //max-height: 150px;
     }
@@ -38,20 +40,20 @@ body {
     flex-direction: column; /* direction d'affichage verticale */
     justify-content: center; /* alignement vertical */
     left: -1px;
-    .content{
+    .content {
       width: 50%;
       margin: auto;
       text-align: center;
-      h1{
-      text-shadow: 3px 3px #8f1412;
+      h1 {
+        text-shadow: 3px 3px #8f1412;
       }
     }
   }
 
-  .article .wrapper{
+  .article .wrapper {
     padding: 0px 24px 96px;
 
-    .content{
+    .content {
       background: white;
       box-shadow: grey 1px 1px 10px 1px;
     }
@@ -61,9 +63,20 @@ body {
     flex: 1 0 auto;
   }
 
-  footer{
-    a.social{
+  footer {
+    a.social {
       margin-left: 10px;
+    }
+  }
+
+  .card .card-footer {
+    border-top: 1px solid rgba(160, 160, 160, 0.2);
+    padding: 16px 24px;
+    span.tags a.tag {
+      padding: 3px;
+      border-radius: 2px;
+      line-height: 2em;
+      text-decoration: none;
     }
   }
 }
