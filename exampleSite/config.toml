@@ -1,0 +1,111 @@
+baseURL = "http://example.org/"
+languageCode = "en-us"
+title = "Blackreaven"
+theme = "blackreaven-cards"
+#theme = "blackreaven-material"
+metadataformat = "yaml"
+canonifyurls = true
+
+[params]
+	# General information
+	author = "Blackreaven"
+	description = "A material design theme for portflio."
+	copyright = "Released under the MIT license"
+	copyrightDate = "2017"
+
+	# Repository
+	provider = "GitHub"
+	repo_url = "https://github.com/blackreaven"
+
+	version = "1.0.0"
+	logo = "images/logo.png"
+	favicon = ""
+
+	permalink = "#"
+
+	# Custom assets
+	custom_css = []
+	custom_js  = []
+
+	# Syntax highlighting theme
+	highlight_css  = "monokai"
+
+	[params.palette]
+    	primary = "blue-grey"
+    	primarytype = "darken-4"
+
+    	accent  = "blue"
+    	accenttype  = "accent-4"
+
+    	link = "pink"
+    	linktype = ""
+
+    	title = "blue"
+    	titletype  = "accent-4"
+
+    [params.font]
+    	text = "Lora"
+    	code = ""
+    	title = "Kalam"
+    	menu = ""
+
+[revealjs]
+	theme = "blood"
+
+[social]
+	twitter = "blackreaven"
+	github  = "blackreaven"
+	facebook  = "blackreaven"
+	linkedin  = "blackreaven"
+	instagram  = "blackreaven"
+	pinterest = "blackreaven"
+	googleplus = "blackreaven"
+	email   = "blackreaven[at]blackreaven"
+
+[Taxonomies]
+tag = "tags"
+category = "categories"
+
+[[menu.main]]
+	name   = "Home"
+	url    = "/"
+	weight = -10
+	identifier = "home"
+	pre = "<i class='fa fa-home'></i>"
+
+[[menu.main]]
+	name   = "Articles"
+	url    = "/article/"
+	weight = 10
+    identifier = "article"
+    pre = "<i class='fa fa-file-text-o'></i>"
+[[menu.main]]
+	name   = "Slides"
+	url    = "/slide/"
+	weight = 20
+	identifier = "slide"
+  	pre = "<i class='fa fa-tv'></i>"
+[[menu.main]]
+	name   = "News"
+	url    = "/news/"
+	weight = 21
+	identifier = "news"
+  	pre = "<i class='fa fa-newspaper-o'></i>"
+[[menu.main]]
+	name   = "Contact"
+	url    = "/contact/"
+	weight = 30
+	identifier = "contact"
+  	pre = "<i class='fa fa-envelope-o'></i>"
+[[menu.main]]
+	name   = "Resume"
+	url    = "/resume/"
+	weight = 40
+	identifier = "resume"
+  	pre = "<i class='fa fa-vcard-o'></i>"
+
+[blackfriday]
+	smartypants	= true
+	fractions = true
+	smartDashes = true
+	plainIDAnchors = true
