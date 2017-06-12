@@ -1,0 +1,25 @@
+{{ define "main" }}
+<div class="container">
+    <div class="row resume">
+        {{ range .Data.Pages.ByWeight }}
+        <article class="card{{ if .Params.color }} resume-{{ replace .Params.color " " "-"}}{{ else }} resume-blue-grey{{ end }}">
+            <div class="ribbon {{ if .Params.color }}{{ .Params.color }}{{ else }}blue-grey{{ end }}">
+                <h2 class="resume-section">
+                    <a href="#{{ .Title | lower }}" title="{{ .Title }}" class="waves-effect waves-light">
+                        <span class="ribbon-content">
+                            <span class="card-title">
+                                {{ .Title }}
+                            </span>
+                        </span>
+                    </a>
+                </h2>
+            </div>
+
+            <div class="card-content blue-grey-text darken-4">
+                {{ .Content }}
+            </div>
+        </article>
+        {{ end }}
+    </div>
+</div>
+{{ end }}

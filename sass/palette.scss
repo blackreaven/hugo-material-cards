@@ -10,9 +10,6 @@
         }
 
         .article {
-          code {
-            color: $color_value;
-          }
           .headerlink {
             color: rgba(0, 0, 0, .26)
           }
@@ -101,7 +98,30 @@
         .card-title {
           text-shadow: 1px 1px darken($color_value, 30);
         }
+      }
 
+      body .resume .card.resume-#{$color_name} {
+        .card-title {
+          text-shadow: 3px 3px darken($color_value, 30);
+        }
+        .card-content ul li strong{
+          color: $color_value;
+        }
+        h3.resume-subsection{
+          background: darken($color_value,10);
+          margin-left: -34px;
+          margin-right: -34px;
+          //box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+          &:before {
+            @include ribbon(10px, darken($color_value, 20), up-right);
+            bottom: -10px;
+          }
+          &:after{
+            @include ribbon(2.7rem 20px, darken($color_value,10), right);
+            right: -20px;
+            top: 0;
+          }
+        }
       }
     } @else if $color_name != "shades" {
 
@@ -111,9 +131,6 @@
         }
 
         .article {
-          code {
-            color: $color_value;
-          }
           .headerlink {
             color: rgba(0, 0, 0, .26)
           }
@@ -198,10 +215,34 @@
         a:hover, a:focus {
           color: lighten($color_value, 25);
         }
-
         .card-title {
           text-shadow: 1px 1px darken($color_value, 30);
         }
+      }
+
+      body .resume .card.resume-#{$color_name}-#{$color_type} {
+        h2.resume-section .card-title {
+          text-shadow: 3px 3px darken($color_value, 30);
+        }
+        .card-content ul li strong{
+          color: $color_value;
+        }
+        h3.resume-subsection{
+          background: darken($color_value,10);
+          margin-left: -34px;
+          margin-right: -34px;
+          //box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+          &:before {
+            @include ribbon(10px, darken($color_value, 20), up-right);
+            bottom: -10px;
+          }
+          &:after{
+            @include ribbon(2.7rem 20px, darken($color_value,10), right);
+            right: -20px;
+            top: 0;
+          }
+        }
+
       }
     }
   }
