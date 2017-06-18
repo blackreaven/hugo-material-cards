@@ -23,6 +23,9 @@
       }
 
       body.palette-accent-#{$color_name} {
+        .pagination li.active {
+          background-color: $color_value;
+        }
         .article {
           a:focus, a:hover {
             color: $color_value;
@@ -52,10 +55,6 @@
       body .card .card-footer span.tags.tags-#{$color_name} a.tag {
         border: 1px solid $color_value;
         color: $color_value;
-      }
-
-      body.palette-accent-#{$color_name} .repo a {
-        background: $color_value;
       }
 
       body.palette-title-#{$color_name} {
@@ -104,11 +103,11 @@
         .card-title {
           text-shadow: 3px 3px darken($color_value, 30);
         }
-        .card-content ul li strong{
+        .card-content ul li strong {
           color: $color_value;
         }
-        h3.resume-subsection{
-          background: darken($color_value,10);
+        h3.resume-subsection {
+          background: darken($color_value, 10);
           margin-left: -34px;
           margin-right: -34px;
           //box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
@@ -116,8 +115,8 @@
             @include ribbon(10px, darken($color_value, 20), up-right);
             bottom: -10px;
           }
-          &:after{
-            @include ribbon(2.7rem 20px, darken($color_value,10), right);
+          &:after {
+            @include ribbon(2.7rem 20px, darken($color_value, 10), right);
             right: -20px;
             top: 0;
           }
@@ -143,6 +142,10 @@
         }
       }
       body.palette-accent-#{$color_name}-#{$color_type} {
+        .pagination li.active {
+          background-color: $color_value;
+        }
+
         .article {
           a:focus, a:hover {
             color: $color_value;
@@ -224,11 +227,11 @@
         h2.resume-section .card-title {
           text-shadow: 3px 3px darken($color_value, 30);
         }
-        .card-content ul li strong{
+        .card-content ul li strong {
           color: $color_value;
         }
-        h3.resume-subsection{
-          background: darken($color_value,10);
+        h3.resume-subsection {
+          background: darken($color_value, 10);
           margin-left: -34px;
           margin-right: -34px;
           //box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
@@ -236,8 +239,8 @@
             @include ribbon(10px, darken($color_value, 20), up-right);
             bottom: -10px;
           }
-          &:after{
-            @include ribbon(2.7rem 20px, darken($color_value,10), right);
+          &:after {
+            @include ribbon(2.7rem 20px, darken($color_value, 10), right);
             right: -20px;
             top: 0;
           }

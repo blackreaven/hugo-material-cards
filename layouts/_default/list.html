@@ -1,7 +1,8 @@
 {{ define "main" }}
 <div class="container">
     <div class="row">
-        {{ range .Data.Pages }}
+        {{ $pag := .Paginate .Data.Pages 12 }}
+        {{ range $pag.Pages }}
         <div class="col s12 m6 l4 item ">
             <article class="card">
                 <div class="ribbon {{ if .Params.color }}{{ .Params.color }}{{ else }}blue{{ end }}">
@@ -30,6 +31,10 @@
             </article>
         </div>
         {{ end }}
+        
+    </div>
+    <div class="row">
+        {{ partial "pagination.html" . }}
     </div>
 </div>
 {{ end }}
