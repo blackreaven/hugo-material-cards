@@ -38,12 +38,12 @@
 </script>
 {{ end }}
 
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+<script src="{{ "lib/highlightjs/highlight.js" | absURL }}"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 <!-- Compiled and minified JavaScript -->
-<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="{{ "js/jquery-2.1.1.min.js" | absURL }}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
-<script src="https://raw.githubusercontent.com/liabru/jquery-match-height/master/jquery.matchHeight.js"></script>
+<script type="text/javascript" src="{{ "js/jquery.matchHeight.js" | absURL }}"></script>
 <script>
     $(function () {
         $('.card').matchHeight({
@@ -70,11 +70,6 @@
     });
 </script>
 <script>
-    {
-        {
-            "/* Add headers to scrollspy */" | safeJS
-        }
-    }
     var headers = document.getElementsByTagName("h2");
     var scrollspy = document.getElementById('scrollspy');
 
@@ -109,13 +104,7 @@
             a.setAttribute("class", "headerlink");
             a.setAttribute("href", "#" + headers[i].id);
             a.setAttribute("title", "Permanent link")
-            a.innerHTML = {
-            {
-                or.Site.Params.permalink
-                "¶"
-            }
-        }
-            ;
+            a.innerHTML = {{ or .Site.Params.permalink "#" }};
             headers[i].appendChild(a);
         }
     }
