@@ -34,13 +34,15 @@
             {{ if .IsPage }}
             <div class="col s12 m6 l4 item ">
                 <article class="card">
-                    <div class="ribbon {{ if .Params.color }}{{ .Params.color }}{{ else }}blue{{ end }}">
-                        <div class="ribbon-content ">
-                        <span class="card-title">
-                            <a href="{{ .Permalink }}" title="{{ .Title }}" class="waves-effect waves-light">{{ .Title }}</a>
-                        </span>
-                        </div>
-                    </div>
+                  <div class="ribbon {{ if .Params.color }}{{ .Params.color }}{{ else }}blue{{ end }}">
+                      <a href="{{ .Permalink }}" title="{{ .Title }}" class="waves-effect waves-light">
+                      <div class="ribbon-content">
+                      <span class="card-title">
+                          {{ .Title }}
+                      </span>
+                      </div>
+                      </a>
+                  </div>
                     <div class="card-content blue-grey-text darken-4">
                     </div>
                 </article>
