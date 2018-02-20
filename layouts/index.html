@@ -7,21 +7,33 @@
         <div class="row">
             <h2>Articles</h2>
             {{ range where .Site.Pages "Type" "article" }}
+
             {{ if .IsPage }}
             <div class="col s12 m6 l4 item ">
                 <article class="card">
-                    <div class="ribbon {{ if .Params.color }}{{ .Params.color }}{{ else }}blue{{ end }}">
-                        <a href="{{ .Permalink }}" title="{{ .Title }}" class="waves-effect waves-light">
-                        <div class="ribbon-content">
-                        <span class="card-title">
-                            {{ .Title }}
-                        </span>
-                        </div>
-                        </a>
-                    </div>
+                  <div class="ribbon {{ if .Params.color }}{{ .Params.color }}{{ else }}blue{{ end }}">
+                      <a href="{{ .Permalink }}" title="{{ .Title }}" class="waves-effect waves-light">
+                          <span class="ribbon-content">
+                              <span class="card-title">
+                                  {{ .Title }}
+                              </span>
+                          </span>
+                      </a>
+                  </div>
 
-                    <div class="card-content blue-grey-text darken-4">
-                    </div>
+                  <div class="card-content blue-grey-text darken-4">
+                      <p>{{ .Params.Description }}</p>
+                  </div>
+                  {{ if .Params.Tags }}
+                  <div class="card-footer">
+                      <span class="tags {{ if .Params.color }}tags-{{ replace .Params.color " " "-"}}{{end}}">
+                          <i class="fa fa-lg fa-tag"></i>
+                          {{ range .Params.Tags }}
+                          <a href="/tags/{{. | lower}}" class="tag">{{.}}</a>
+                          {{ end }}
+                      </span>
+                  </div>
+                  {{ end }}
                 </article>
             </div>
             {{ end }}
@@ -36,15 +48,27 @@
                 <article class="card">
                   <div class="ribbon {{ if .Params.color }}{{ .Params.color }}{{ else }}blue{{ end }}">
                       <a href="{{ .Permalink }}" title="{{ .Title }}" class="waves-effect waves-light">
-                      <div class="ribbon-content">
-                      <span class="card-title">
-                          {{ .Title }}
-                      </span>
-                      </div>
+                          <span class="ribbon-content">
+                              <span class="card-title">
+                                  {{ .Title }}
+                              </span>
+                          </span>
                       </a>
                   </div>
-                    <div class="card-content blue-grey-text darken-4">
-                    </div>
+
+                  <div class="card-content blue-grey-text darken-4">
+                      <p>{{ .Params.Description }}</p>
+                  </div>
+                  {{ if .Params.Tags }}
+                  <div class="card-footer">
+                      <span class="tags {{ if .Params.color }}tags-{{ replace .Params.color " " "-"}}{{end}}">
+                          <i class="fa fa-lg fa-tag"></i>
+                          {{ range .Params.Tags }}
+                          <a href="/tags/{{. | lower}}" class="tag">{{.}}</a>
+                          {{ end }}
+                      </span>
+                  </div>
+                  {{ end }}
                 </article>
             </div>
             {{ end }}
