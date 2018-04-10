@@ -51,8 +51,6 @@
     <link rel="stylesheet" href="{{ "lib/font-awesome/css/font-awesome.min.css" | absURL }}">
     <link rel="stylesheet" href="{{ "css/palette.css" | absURL }}">
     <link rel="stylesheet" href="{{ "css/application.css" | absURL }}">
-
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/{{ with .Site.Params.highlight_theme }}{{ . }}{{ else }}default{{ end }}.min.css">
     {{/* set default values if no custom ones are defined */}}
     {{ $text := or .Site.Params.font.text "Roboto" }}
     {{ $code := or .Site.Params.font.code "Roboto Mono" }}
